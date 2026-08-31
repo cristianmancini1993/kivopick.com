@@ -292,12 +292,14 @@ html, body {
   font-weight: 700;
   color: #999999;
   text-decoration: line-through;
+  white-space: nowrap;
 }
 .c4x-new-price {
   font-size: 48px;
   font-weight: 900;
   color: #007e41;
   line-height: 1;
+  white-space: nowrap;
 }
 .c4x-stock-bar {
   width: 100%;
@@ -1399,17 +1401,22 @@ body.x9-page { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; ba
   .trim-benefits li { font-size: 15px; gap: 10px; }
   .trim-benefits li span { font-size: 20px; }
   .trim-benefits strong { font-size: 15.5px; }
-  .c4x-new-price { font-size: clamp(32px, 11vw, 42px); }
-  .c4x-old-price { font-size: 22px; }
+  .c4x-new-price { font-size: 32px; }
+  .c4x-old-price { font-size: 18px; }
   .c4x-sale-badge { font-size: 16px; padding: 10px 12px; }
   .c4x-price-box { padding: 14px 14px; box-sizing: border-box; }
   .c4x-price-top {
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
     justify-content: center;
+    gap: 10px;
   }
   .c4x-price-row {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: baseline;
+    gap: 12px;
   }
   .trim-hero__image,
   .trim-hero__image img {
@@ -1422,11 +1429,6 @@ body.x9-page { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; ba
 }
 
 @media (max-width: 600px) {
-  .c4x-price-top {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
   .tx-cmp-table-header { display: none; }
   .tx-cmp-row {
     display: flex;
