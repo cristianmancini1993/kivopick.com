@@ -1370,4 +1370,93 @@ border-radius:16px;box-shadow:0 16px 32px rgba(0,126,65,0.32);transition:all .2s
 body.x9-page { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; background: #fff; }
 @media (max-width: 768px) {
   .x9-form-section { padding: 0 16px; margin-bottom: 24px; }
+  .x9-form-wrap .cod-form { padding: 20px 16px 18px; border-radius: 16px; }
+  .x9-form-wrap .cod-form__title { font-size: 18px; line-height: 1.25; }
+  .x9-form-wrap .cod-form__subtitle { font-size: 14px; }
+  .x9-form-wrap .cod-form__input { font-size: 16px; }
+  .x9-form-wrap .cta-button { font-size: 16px; padding: 16px 14px; line-height: 1.25; }
 }
+
+@media (max-width: 900px) {
+  .trim-hero,
+  .benefits-section,
+  .tx-cmp-section,
+  .reviews-section,
+  .kit-section,
+  .faq-section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .trim-hero h1 {
+    font-size: 28px;
+    line-height: 1.08;
+    letter-spacing: -0.7px;
+    max-width: none;
+  }
+  .trim-subtitle { font-size: 16px; }
+  .trim-benefits { text-align: left; }
+  .trim-benefits li { font-size: 15px; gap: 10px; }
+  .trim-benefits li span { font-size: 20px; }
+  .trim-benefits strong { font-size: 15.5px; }
+  .c4x-new-price { font-size: clamp(32px, 11vw, 42px); }
+  .c4x-old-price { font-size: 22px; }
+  .c4x-sale-badge { font-size: 16px; padding: 10px 12px; }
+  .c4x-price-box { padding: 14px 14px; box-sizing: border-box; }
+  .c4x-price-top {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .c4x-price-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .trim-hero__image,
+  .trim-hero__image img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .c4x-trust-box,
+  .c4x-order-stock-section { max-width: 100%; padding-left: 16px; padding-right: 16px; }
+  .c4x-stock-bar-label { font-size: 12px; padding: 0 10px; }
+}
+
+@media (max-width: 600px) {
+  .c4x-price-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .tx-cmp-table-header { display: none; }
+  .tx-cmp-row {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 14px 14px;
+    gap: 4px;
+  }
+  .tx-cmp-comp,
+  .tx-cmp-no,
+  .tx-cmp-yes {
+    text-align: left;
+    border: 0;
+    padding: 4px 0;
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+  .tx-cmp-yes {
+    background: #e9f7ed;
+    border-radius: 10px;
+    padding: 8px 10px;
+  }
+  .benefits-header h2,
+  .reviews-header h2,
+  .kit-header h2,
+  .faq-header h2 {
+    font-size: 26px;
+    letter-spacing: -0.6px;
+  }
+  .trim-trust { justify-content: center; }
+  .faq-item summary { font-size: 15px; padding: 14px 16px; gap: 10px; }
+  .faq-answer { font-size: 15px; padding: 0 16px 16px; }
+}
+
