@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /assets/img/products/*/_README.txt
 Disallow: /*/hypertrimmer/thank-you.html
+Disallow: /*/trimmer-x9-pro/thank-you.html
 
 Sitemap: https://kivopick.com/sitemap.xml
