@@ -6,7 +6,7 @@
 (function () {
   const C = window.SITE_CONFIG || {};
   const CLICK_ID_KEYS = ['gclid', 'gbraid', 'wbraid'];
-  const DEFAULT_GOOGLE_ADS_SEND_TO = 'AW-18360728507/piRMCJP23tkcEOiR9rJE';
+  const DEFAULT_GOOGLE_ADS_SEND_TO = 'AW-18412106936/h7gnCMeGkOocELjpyctE';
   const CASHBOLT_SUBMIT_SESSION_KEY = 'df_cashbolt_submit';
 
   function getURLParam(name) {
@@ -85,6 +85,21 @@
     }
     setStoredParam('cashbolt_submit', '1');
     setCashboltSubmitCookie();
+  }
+
+  function pageHasInlineGadsConversion() {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      var t = scripts[i].textContent || '';
+      if (
+        t.indexOf("gtag('event', 'conversion'") !== -1 &&
+        t.indexOf('send_to') !== -1 &&
+        t.indexOf('fireLifepickshopThankYouConversion') === -1
+      ) {
+        return true;
+      }
+    }
+    return false;
   }
 
   function shouldFireThankYouConversion() {
@@ -216,6 +231,11 @@
     }
 
     if (!window.gtag) return false;
+
+    if (pageHasInlineGadsConversion()) {
+      clearCashboltSubmitMarkers();
+      return true;
+    }
 
     const T = getTrackingContext();
     const p = new URLSearchParams(window.location.search);
