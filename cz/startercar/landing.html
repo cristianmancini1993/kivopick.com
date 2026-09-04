@@ -248,27 +248,33 @@ window.SITE_CONFIG = {
 
 <section class="x9-form-section" id="FORM">
   <div class="x9-form-wrap">
-    <form class="cod-form x9-form" novalidate>
+    <div class="x9-form-card">
       <h2 class="cod-form__title">POTVRĎTE OBJEDNÁVKU</h2>
       <p class="cod-form__subtitle">Vyplňte formulář. Zavoláme vám pro potvrzení doručení a adresy. Platíte až při převzetí.</p>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="name1">Jméno a příjmení *</label>
-        <input class="cod-form__input" type="text" id="name1" name="name" placeholder="Např. Jan Novák" required minlength="3" autocomplete="name">
-        <span class="cod-form__error">Zadejte jméno a příjmení (alespoň 3 znaky)</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="phone1">Telefonní číslo *</label>
-        <input class="cod-form__input" type="tel" id="phone1" name="phone" placeholder="Např. 777 123 456" required autocomplete="tel">
-        <span class="cod-form__error">Zadejte platné telefonní číslo</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="address1">Doručovací adresa *</label>
-        <input class="cod-form__input" type="text" id="address1" name="address" placeholder="Ulice, číslo, město, PSČ" required minlength="10" autocomplete="street-address">
-        <span class="cod-form__error">Zadejte kompletní adresu (alespoň 10 znaků)</span>
-      </div>
-      <button type="submit" class="cta-button">POTVRDIT OBJEDNÁVKU — 1 899 Kč</button>
-      <p class="cod-form__trust">🔒 Vaše údaje jsou chráněny. Platíte až při převzetí balíku.</p>
-    </form>
+      <form class="tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
+        <label for="name">meno a priezvisko*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="meno a priezvisko" required><br>
+        <label for="tel">mobilní telefon*</label>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="mobilní telefon" required><br>
+        <label for="street-address">adresa*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="adresa" required><br>
+        <label for="postal-code">Poštovní směrovací číslo</label>
+        <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" placeholder="Poštovní směrovací číslo"><br>
+        <label for="address-level2">město</label>
+        <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="město"><br>
+        <input name="uid" type="hidden" value="0198c21d-3f64-7778-ab2d-90527716c341">
+        <input name="offer" type="hidden" value="3337">
+        <input name="lp" type="hidden" value="3373">
+        <input name="thankyoupage" type="hidden" value="https://kivopick.com/cz/startercar/thank-you.html">
+        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i">
+        <input name="_key" type="hidden" value="a93cb45a21737eedf61e4b168380e0c2e6c88f7b">
+        <div style="margin-top: 10px; text-align: center">
+          <button name="submit" type="submit">Objednat nyní</button>
+        </div>
+        <p class="cod-form__trust">🔒 Vaše údaje jsou chráněny. Platíte až při převzetí balíku.</p>
+        <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+      </form>
+    </div>
   </div>
 </section>
 

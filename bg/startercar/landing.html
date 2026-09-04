@@ -248,27 +248,33 @@ window.SITE_CONFIG = {
 
 <section class="x9-form-section" id="FORM">
   <div class="x9-form-wrap">
-    <form class="cod-form x9-form" novalidate>
+    <div class="x9-form-card">
       <h2 class="cod-form__title">ПОТВЪРДЕТЕ ПОРЪЧКАТА СИ</h2>
       <p class="cod-form__subtitle">Попълнете формуляра. Ще ви се обадим, за да потвърдим доставката и адреса. Плащате само при получаване.</p>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="name1">Име и фамилия *</label>
-        <input class="cod-form__input" type="text" id="name1" name="name" placeholder="напр. Георги Иванов" required minlength="3" autocomplete="name">
-        <span class="cod-form__error">Въведете име и фамилия (поне 3 знака)</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="phone1">Телефонен номер *</label>
-        <input class="cod-form__input" type="tel" id="phone1" name="phone" placeholder="088 123 4567" required autocomplete="tel">
-        <span class="cod-form__error">Въведете валиден телефонен номер</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="address1">Адрес за доставка *</label>
-        <input class="cod-form__input" type="text" id="address1" name="address" placeholder="улица, номер, град, пощенски код" required minlength="10" autocomplete="street-address">
-        <span class="cod-form__error">Въведете пълен адрес (поне 10 знака)</span>
-      </div>
-      <button type="submit" class="cta-button">ПОТВЪРДИ ПОРЪЧКА — 79,00€</button>
-      <p class="cod-form__trust">🔒 Данните ви са защитени. Плащате само когато получите пакета.</p>
-    </form>
+      <form class="tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
+        <label for="name">Име и Фамилия*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="Име и Фамилия" required><br>
+        <label for="tel">Мобилен телефон*</label>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="Мобилен телефон" required><br>
+        <label for="street-address">Адрес*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Адрес" required><br>
+        <label for="postal-code">Пощенски код</label>
+        <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" placeholder="Пощенски код"><br>
+        <label for="address-level2">Населено място</label>
+        <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="Населено място"><br>
+        <input name="uid" type="hidden" value="0198c21d-3f64-7778-ab2d-90527716c341">
+        <input name="offer" type="hidden" value="3334">
+        <input name="lp" type="hidden" value="3370">
+        <input name="thankyoupage" type="hidden" value="https://kivopick.com/bg/startercar/thank-you.html">
+        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i">
+        <input name="_key" type="hidden" value="af5acdfff46ad3faed45ef634735930b3bced5bb">
+        <div style="margin-top: 10px; text-align: center">
+          <button name="submit" type="submit">Плащане при доставка</button>
+        </div>
+        <p class="cod-form__trust">🔒 Данните ви са защитени. Плащате само когато получите пакета.</p>
+        <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+      </form>
+    </div>
   </div>
 </section>
 

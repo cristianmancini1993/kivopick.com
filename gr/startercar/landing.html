@@ -248,27 +248,33 @@ window.SITE_CONFIG = {
 
 <section class="x9-form-section" id="FORM">
   <div class="x9-form-wrap">
-    <form class="cod-form x9-form" novalidate>
+    <div class="x9-form-card">
       <h2 class="cod-form__title">ΕΠΙΒΕΒΑΙΩΣΤΕ ΤΗΝ ΠΑΡΑΓΓΕΛΙΑ</h2>
       <p class="cod-form__subtitle">Συμπληρώστε τη φόρμα. Σας καλούμε για να επιβεβαιώσουμε παράδοση και διεύθυνση. Πληρώνετε μόνο στην παράδοση.</p>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="name1">Όνομα και επώνυμο *</label>
-        <input class="cod-form__input" type="text" id="name1" name="name" placeholder="π.χ. Γιώργος Παπαδόπουλος" required minlength="3" autocomplete="name">
-        <span class="cod-form__error">Εισαγάγετε όνομα και επώνυμο (τουλάχιστον 3 χαρακτήρες)</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="phone1">Αριθμός τηλεφώνου *</label>
-        <input class="cod-form__input" type="tel" id="phone1" name="phone" placeholder="π.χ. 694 123 4567" required autocomplete="tel">
-        <span class="cod-form__error">Εισαγάγετε έγκυρο αριθμό τηλεφώνου</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="address1">Διεύθυνση παράδοσης *</label>
-        <input class="cod-form__input" type="text" id="address1" name="address" placeholder="Οδός, αριθμός, πόλη, ΤΚ" required minlength="10" autocomplete="street-address">
-        <span class="cod-form__error">Εισαγάγετε πλήρη διεύθυνση (τουλάχιστον 10 χαρακτήρες)</span>
-      </div>
-      <button type="submit" class="cta-button">ΕΠΙΒΕΒΑΙΩΣΗ ΠΑΡΑΓΓΕΛΙΑΣ — 97,00€</button>
-      <p class="cod-form__trust">🔒 Τα δεδομένα σας προστατεύονται. Πληρώνετε μόνο όταν παραλάβετε το δέμα.</p>
-    </form>
+      <form class="tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
+        <label for="name">Όνομα και επώνυμο*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="Όνομα και επώνυμο" required><br>
+        <label for="tel">Κινητό τηλέφωνο*</label>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="Κινητό τηλέφωνο" required><br>
+        <label for="street-address">Διεύθυνση*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Διεύθυνση" required><br>
+        <label for="postal-code">Τ.Κ. (Ταχυδρομικός Κωδικός)</label>
+        <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" placeholder="Τ.Κ. (Ταχυδρομικός Κωδικός)"><br>
+        <label for="address-level2">Δήμος</label>
+        <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="Δήμος"><br>
+        <input name="uid" type="hidden" value="0198c21d-3f64-7778-ab2d-90527716c341">
+        <input name="offer" type="hidden" value="3335">
+        <input name="lp" type="hidden" value="3371">
+        <input name="thankyoupage" type="hidden" value="https://kivopick.com/gr/startercar/thank-you.html">
+        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i">
+        <input name="_key" type="hidden" value="91312d56f39b3af3447981ea078e1271cce3f92c">
+        <div style="margin-top: 10px; text-align: center">
+          <button name="submit" type="submit">Πληρωμή κατά την παράδοση</button>
+        </div>
+        <p class="cod-form__trust">🔒 Τα δεδομένα σας προστατεύονται. Πληρώνετε μόνο όταν παραλάβετε το δέμα.</p>
+        <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+      </form>
+    </div>
   </div>
 </section>
 
