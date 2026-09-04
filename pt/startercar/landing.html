@@ -251,27 +251,29 @@ window.SITE_CONFIG = {
 
 <section class="x9-form-section" id="FORM">
   <div class="x9-form-wrap">
-    <form class="cod-form x9-form" novalidate>
+    <div class="x9-form-card">
       <h2 class="cod-form__title">CONFIRME A SUA ENCOMENDA</h2>
       <p class="cod-form__subtitle">Preencha o formulário. Ligamos para confirmar a entrega e a morada. Paga só na entrega.</p>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="name1">Nome e apelido *</label>
-        <input class="cod-form__input" type="text" id="name1" name="name" placeholder="Ex. João Silva" required minlength="3" autocomplete="name">
-        <span class="cod-form__error">Introduza o nome completo (pelo menos 3 caracteres)</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="phone1">Número de telefone *</label>
-        <input class="cod-form__input" type="tel" id="phone1" name="phone" placeholder="Ex. 912 345 678" required autocomplete="tel">
-        <span class="cod-form__error">Introduza um número de telefone válido</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="address1">Morada de entrega *</label>
-        <input class="cod-form__input" type="text" id="address1" name="address" placeholder="Rua, número, cidade, código postal" required minlength="10" autocomplete="street-address">
-        <span class="cod-form__error">Introduza uma morada completa (pelo menos 10 caracteres)</span>
-      </div>
-      <button type="submit" class="cta-button">CONFIRMAR ENCOMENDA — 89,00€</button>
-      <p class="cod-form__trust">🔒 Os seus dados estão protegidos. Paga só quando receber o pacote.</p>
-    </form>
+      <form class="tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
+        <label for="name">Nome Sobrenome*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="Nome Sobrenome" required><br>
+        <label for="street-address">Endereço*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Endereço" required><br>
+        <label for="tel">Telefone*</label>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="Telefone" required><br>
+        <input name="uid" type="hidden" value="0198c21d-3f64-7778-ab2d-90527716c341">
+        <input name="offer" type="hidden" value="3544">
+        <input name="lp" type="hidden" value="3581">
+        <input name="thankyoupage" type="hidden" value="https://kivopick.com/pt/startercar/thank-you.html">
+        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i">
+        <input name="_key" type="hidden" value="9b24a0f36853b06cc3da36d7d82999955776fde4">
+        <div style="margin-top: 10px; text-align: center">
+          <button name="submit" type="submit">Encomendar agora</button>
+        </div>
+        <p class="cod-form__trust">🔒 Os seus dados estão protegidos. Paga só quando receber o pacote.</p>
+        <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+      </form>
+    </div>
   </div>
 </section>
 

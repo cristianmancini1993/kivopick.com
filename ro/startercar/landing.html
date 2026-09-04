@@ -251,27 +251,33 @@ window.SITE_CONFIG = {
 
 <section class="x9-form-section" id="FORM">
   <div class="x9-form-wrap">
-    <form class="cod-form x9-form" novalidate>
+    <div class="x9-form-card">
       <h2 class="cod-form__title">CONFIRMĂ COMANDA</h2>
       <p class="cod-form__subtitle">Completează formularul. Te sunăm pentru a confirma livrarea și adresa. Plătești doar la livrare.</p>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="name1">Nume și prenume *</label>
-        <input class="cod-form__input" type="text" id="name1" name="name" placeholder="Ex. Ion Popescu" required minlength="3" autocomplete="name">
-        <span class="cod-form__error">Introdu numele complet (cel puțin 3 caractere)</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="phone1">Număr de telefon *</label>
-        <input class="cod-form__input" type="tel" id="phone1" name="phone" placeholder="Ex. 0722 123 456" required autocomplete="tel">
-        <span class="cod-form__error">Introdu un număr de telefon valid</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="address1">Adresa de livrare *</label>
-        <input class="cod-form__input" type="text" id="address1" name="address" placeholder="Strada, număr, oraș, cod poștal" required minlength="10" autocomplete="street-address">
-        <span class="cod-form__error">Introdu o adresă completă (cel puțin 10 caractere)</span>
-      </div>
-      <button type="submit" class="cta-button">CONFIRMĂ COMANDA — 399 lei</button>
-      <p class="cod-form__trust">🔒 Datele tale sunt protejate. Plătești doar când primești coletul.</p>
-    </form>
+      <form class="tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
+        <label for="name">nume și prenume*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="nume și prenume" required><br>
+        <label for="tel">telefon mobil*</label>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="telefon mobil" required><br>
+        <label for="street-address">Adresă*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Adresă" required><br>
+        <label for="postal-code">Cod poștal</label>
+        <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" placeholder="Cod poștal"><br>
+        <label for="address-level2">Localitate</label>
+        <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="Localitate"><br>
+        <input name="uid" type="hidden" value="0198c21d-3f64-7778-ab2d-90527716c341">
+        <input name="offer" type="hidden" value="3336">
+        <input name="lp" type="hidden" value="3372">
+        <input name="thankyoupage" type="hidden" value="https://kivopick.com/ro/startercar/thank-you.html">
+        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i">
+        <input name="_key" type="hidden" value="6522945707c3067750ac2b73519f0c251da53cde">
+        <div style="margin-top: 10px; text-align: center">
+          <button name="submit" type="submit">Plată la livrare</button>
+        </div>
+        <p class="cod-form__trust">🔒 Datele tale sunt protejate. Plătești doar când primești coletul.</p>
+        <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+      </form>
+    </div>
   </div>
 </section>
 

@@ -251,27 +251,33 @@ window.SITE_CONFIG = {
 
 <section class="x9-form-section" id="FORM">
   <div class="x9-form-wrap">
-    <form class="cod-form x9-form" novalidate>
+    <div class="x9-form-card">
       <h2 class="cod-form__title">CONFERMA IL TUO ORDINE</h2>
       <p class="cod-form__subtitle">Compila il modulo. Ti chiamiamo per confermare consegna e indirizzo. Paghi solo alla consegna.</p>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="name1">Nome e cognome *</label>
-        <input class="cod-form__input" type="text" id="name1" name="name" placeholder="Es. Mario Rossi" required minlength="3" autocomplete="name">
-        <span class="cod-form__error">Inserisci nome e cognome (almeno 3 caratteri)</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="phone1">Numero di telefono *</label>
-        <input class="cod-form__input" type="tel" id="phone1" name="phone" placeholder="Es. 333 1234567" required autocomplete="tel">
-        <span class="cod-form__error">Inserisci un numero di telefono valido</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="address1">Indirizzo di consegna *</label>
-        <input class="cod-form__input" type="text" id="address1" name="address" placeholder="Via, civico, città, CAP" required minlength="10" autocomplete="street-address">
-        <span class="cod-form__error">Inserisci un indirizzo completo (almeno 10 caratteri)</span>
-      </div>
-      <button type="submit" class="cta-button">CONFERMA ORDINE — 59,00€</button>
-      <p class="cod-form__trust">🔒 I tuoi dati sono protetti. Paghi solo quando ricevi il pacco.</p>
-    </form>
+      <form class="tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
+        <label for="name">Nome e cognome*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="Nome e cognome" required><br>
+        <label for="tel">Telefono cellulare*</label>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="Telefono cellulare" required><br>
+        <label for="street-address">Indirizzo*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Indirizzo" required><br>
+        <label for="postal-code">CAP</label>
+        <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" placeholder="CAP"><br>
+        <label for="address-level2">Città</label>
+        <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="Città"><br>
+        <input name="uid" type="hidden" value="0198c21d-3f64-7778-ab2d-90527716c341">
+        <input name="offer" type="hidden" value="4190">
+        <input name="lp" type="hidden" value="4230">
+        <input name="thankyoupage" type="hidden" value="https://kivopick.com/it/startercar/thank-you.html">
+        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i">
+        <input name="_key" type="hidden" value="ff2ddea72b415c4a61e39ca6557fbfd723d370a6">
+        <div style="margin-top: 10px; text-align: center">
+          <button name="submit" type="submit">Paga alla consegna</button>
+        </div>
+        <p class="cod-form__trust">🔒 I tuoi dati sono protetti. Paghi solo quando ricevi il pacco.</p>
+        <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+      </form>
+    </div>
   </div>
 </section>
 

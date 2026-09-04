@@ -251,27 +251,33 @@ window.SITE_CONFIG = {
 
 <section class="x9-form-section" id="FORM">
   <div class="x9-form-wrap">
-    <form class="cod-form x9-form" novalidate>
+    <div class="x9-form-card">
       <h2 class="cod-form__title">ERŐSÍTSE MEG A RENDELÉST</h2>
       <p class="cod-form__subtitle">Töltse ki az űrlapot. Felhívjuk a kézbesítés és a cím megerősítéséhez. Csak átvételkor fizet.</p>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="name1">Név és vezetéknév *</label>
-        <input class="cod-form__input" type="text" id="name1" name="name" placeholder="Pl. Kovács János" required minlength="3" autocomplete="name">
-        <span class="cod-form__error">Adja meg a teljes nevet (legalább 3 karakter)</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="phone1">Telefonszám *</label>
-        <input class="cod-form__input" type="tel" id="phone1" name="phone" placeholder="Pl. 30 123 4567" required autocomplete="tel">
-        <span class="cod-form__error">Adjon meg érvényes telefonszámot</span>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="address1">Szállítási cím *</label>
-        <input class="cod-form__input" type="text" id="address1" name="address" placeholder="Utca, házszám, város, irányítószám" required minlength="10" autocomplete="street-address">
-        <span class="cod-form__error">Adjon meg teljes címet (legalább 10 karakter)</span>
-      </div>
-      <button type="submit" class="cta-button">RENDELÉS MEGERŐSÍTÉSE — 27 999 Ft</button>
-      <p class="cod-form__trust">🔒 Adatai védettek. Csak a csomag átvételekor fizet.</p>
-    </form>
+      <form class="tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
+        <label for="name">Családnév és keresztnév*</label>
+        <input id="name" type="text" name="name" autocomplete="name" placeholder="Családnév és keresztnév" required><br>
+        <label for="tel">mobiltelefon*</label>
+        <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="mobiltelefon" required><br>
+        <label for="street-address">cím*</label>
+        <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="cím" required><br>
+        <label for="postal-code">irányítószám</label>
+        <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" placeholder="irányítószám"><br>
+        <label for="address-level2">település</label>
+        <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="település"><br>
+        <input name="uid" type="hidden" value="0198c21d-3f64-7778-ab2d-90527716c341">
+        <input name="offer" type="hidden" value="3338">
+        <input name="lp" type="hidden" value="3374">
+        <input name="thankyoupage" type="hidden" value="https://kivopick.com/hu/startercar/thank-you.html">
+        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/7nudarijfrsvnhnwfnpqfh2t8vqt109i">
+        <input name="_key" type="hidden" value="6e3e91c1a228c685e11d793903290491253af3d8">
+        <div style="margin-top: 10px; text-align: center">
+          <button name="submit" type="submit">utánvételes fizetés</button>
+        </div>
+        <p class="cod-form__trust">🔒 Adatai védettek. Csak a csomag átvételekor fizet.</p>
+        <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+      </form>
+    </div>
   </div>
 </section>
 
