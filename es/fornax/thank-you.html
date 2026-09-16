@@ -205,7 +205,7 @@ window.SITE_CONFIG = {
   GEO: 'es',
   PRODUCT_SLUG: 'fornax',
   CURRENCY: 'EUR',
-  PRICE: 99.0,
+  PRICE: 69.0,
   META_PIXEL_ID: '',
   GOOGLE_TAG_ID: '',
   GOOGLE_ADS_CONVERSION_ID: '',
@@ -217,12 +217,6 @@ window.SITE_CONFIG = {
 </script>
 <script src="/assets/js/tracking.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
-<script>
-// Trigger Purchase / conversion event after page load
-window.addEventListener('load', function () {
-  if (window.trackPurchase) window.trackPurchase(99.0, 'EUR');
-});
-</script>
 </head>
 <body>
 
@@ -314,34 +308,13 @@ window.addEventListener('load', function () {
 </div></footer>
 
 <!-- Google Ads Purchase conversion — value = CPA/CPL EUR for offer #1415 -->
-<!-- Event snippet for Purchase conversion page -->
+<!-- Event snippet for Acquisto conversion page -->
 <script>
-  (function () {
-    var p = new URLSearchParams(window.location.search);
-
-    function stored(name) {
-      try { return window.localStorage.getItem('df_' + name) || ''; }
-      catch (e) { return ''; }
-    }
-
-    var campaignId = p.get('campaign_id') || p.get('utm_campaign') || p.get('campaignid') || p.get('subid') || stored('campaign_id') || stored('utm_campaign') || stored('subid') || '';
-    var subid = p.get('subid') || campaignId || stored('subid') || '';
-    var transactionId = p.get('order_id') || p.get('transaction_id') || p.get('tid') || subid || '';
-
-    gtag('event', 'conversion', {
+  gtag('event', 'conversion', {
       'send_to': 'AW-18412106936/h7gnCMeGkOocELjpyctE',
-      'value': 69.0,
-      'currency': 'EUR',
-      'transaction_id': transactionId,
-      'campaign_id': campaignId,
-      'subid': subid,
-      'utm_campaign': p.get('utm_campaign') || campaignId,
-      'utm_source': p.get('utm_source') || stored('utm_source') || '',
-      'utm_medium': p.get('utm_medium') || stored('utm_medium') || '',
-      'utm_term': p.get('utm_term') || stored('utm_term') || '',
-      'utm_content': p.get('utm_content') || stored('utm_content') || ''
-    });
-  })();
+      'transaction_id': ''
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
 </script>
 
 </body>
